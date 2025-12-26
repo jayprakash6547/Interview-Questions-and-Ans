@@ -109,7 +109,129 @@ filter() → Works with Predicate
 Spring Boot                                                                         ******************************************
 ******************************************************************************************************************************
 ******************************************************************************************************************************
+What is @SpringBootApplication?
+It is a combination of @Configuration, @EnableAutoConfiguration, and @ComponentScan.
+*****
 
+What is Dependency Injection (DI)?
+Dependency Injection is a design principle where Spring provides required objects (dependencies) to a class instead of the class creating them itself.
+This makes the code loosely coupled, easier to test, and easier to maintain
+
+How Spring does DI
+Using annotations like @Autowired, @Component, @Service, @Repository
+*****
+
+Difference between @Controller and @RestController
+@Controller
+Used for MVC web applications
+Returns view names (JSP, Thymeleaf, HTML)
+Needs @ResponseBody to return JSON
+🧠 Used when UI pages are involved.
+
+@RestController---@RestController = @Controller + @ResponseBody
+Used for RESTful web services
+Returns JSON/XML directly
+@ResponseBody is not required
+🧠 Used in microservices and APIs.
+*****
+
+ALL HTTP methods---
+GET → Fetch data
+POST → Create new data
+PUT → Update entire data
+PATCH → Update partial data
+DELETE → Remove data
+*****
+
+What are the annotation we use in exception handling in spring boot?
+@ExceptionHandler → Handles specific exceptions in a controller
+@ControllerAdvice → Global exception handling for all controllers
+@RestControllerAdvice → Global exception handling for REST APIs
+@ResponseStatus → Defines HTTP status code for an exception
+@ResponseBody → Returns exception response as JSON/XML
+*****
+
+What is Use of @Transactional annotation
+Used to manage database transactions automatically
+Ensures ACID properties (commit on success, rollback on failure)
+If an exception occurs, transaction is rolled back automatically
+*****
+What is Actuator?
+Provides health, metrics, and monitoring endpoints.
+
+What is application.properties?
+Used to configure application settings.
+
+What is Spring Boot DevTools?
+Provides auto-restart and faster development.
+
+*****
+Spring boot Annotaions---
+@SpringBootApplication → Main annotation to start Spring Boot app
+
+@Configuration → Defines configuration class
+
+@EnableAutoConfiguration → Enables auto-configuration
+
+@ComponentScan → Scans components in package
+
+@Component → Marks a class as Spring bean
+
+@Service → Business logic layer bean
+
+@Repository → DAO layer and exception translation
+
+@Autowired → Injects dependency automatically
+
+@Qualifier → Resolves bean conflict
+
+@Primary → Sets default bean
+
+@Controller → MVC controller for views
+
+@RestController → REST controller for APIs
+
+@RequestMapping → Maps request to controller method
+
+@GetMapping → Handles GET request
+
+@PostMapping → Handles POST request
+
+@PutMapping → Handles PUT request
+
+@PatchMapping → Handles PATCH request
+
+@DeleteMapping → Handles DELETE request
+
+@RequestBody → Reads request body
+
+@PathVariable → Reads URL path value
+
+@RequestParam → Reads query parameter
+
+@ExceptionHandler → Handles exceptions locally
+
+@ControllerAdvice → Global exception handling
+
+@RestControllerAdvice → Global REST exception handling
+
+@Transactional → Manages database transactions
+
+@Entity → Maps class to database table
+
+@Id → Primary key
+
+@GeneratedValue → Auto-generates ID
+
+@Table → Maps entity to table
+
+@Column → Maps field to column
+
+@EnableScheduling → Enables scheduled tasks
+
+@Scheduled → Runs method on schedule
+
+*****
 
 
 
