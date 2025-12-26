@@ -62,15 +62,51 @@ Threads waiting for each other forever.
 
 ******************************************************************************************************************************
 ******************************************************************************************************************************
-Java 8
+Java 8                                                                              ******************************************
 ******************************************************************************************************************************
 ******************************************************************************************************************************
+What are the features of Java 8?
+Lambda Expressions, Stream API, Functional Interface, Default Methods, Optional Class, New Date and Time API.
+
+What is a Lambda Expression?
+Used to write anonymous functions and reduce boilerplate code.
+
+What is a Functional Interface?
+An interface with only one abstract method.
+
+What is Stream API?
+Used to process collections in a functional programming style.
+
+What is Optional class?
+Used to avoid NullPointerException.
+
+What are Default Methods?
+Methods with implementation inside an interface.
+
+What is Method Reference?
+A shorthand way to refer to a method using ::.
+
+What is the new Date and Time API in Java 8?
+An improved, immutable date-time API under java.time.
+
+What is Parallel Stream?
+Used to process data in parallel for better performance.
+
+*****
+Difference between map() and filter()
+map() → Transforms each element and returns the same number of elements
+filter() → Selects elements based on condition and may return fewer elements
+map() → Used for data modification
+filter() → Used for data selection
+map() → Works with Function
+filter() → Works with Predicate
+*****
 
 
 
 ******************************************************************************************************************************
 ******************************************************************************************************************************
-Spring Boot
+Spring Boot                                                                         ******************************************
 ******************************************************************************************************************************
 ******************************************************************************************************************************
 
@@ -78,9 +114,16 @@ Spring Boot
 
 
 
+
+
+
+
+
+
+
 ******************************************************************************************************************************
 ******************************************************************************************************************************
-SQL
+SQL                                                                                 ******************************************
 ******************************************************************************************************************************
 ******************************************************************************************************************************
 What is Indexing in SQL?
@@ -116,10 +159,128 @@ What is Normalization in SQL?
 Normalization is the process of organizing data in a database to reduce redundancy and improve data integrity by dividing data into smaller related tables.
 *****
 
+What is ACID Property?
+ACID is a set of properties that ensure reliable and consistent database transactions.
+ACID stands for:Atomicity, Consistency, Isolation, Durability
+
+Atomicity
+A transaction is all or nothing.
+If any part fails, the entire transaction is rolled back.
+🧠 Example: Money debit + credit must both succeed.
+
+Consistency
+A transaction moves the database from one valid state to another.
+Database rules and constraints are always maintained.
+
+Isolation
+Multiple transactions run independently without affecting each other.
+Intermediate data is not visible to other transactions.
+
+Durability
+Once a transaction is committed, it is permanently saved.
+Data remains safe even after system failure.
+*****
+
+
+
+
+
+
+
+
+
+
+
+******************************************************************************************************************************
+******************************************************************************************************************************
+Microservices                                                                       ******************************************
+******************************************************************************************************************************
+******************************************************************************************************************************
+What is Microservices Architecture?
+An architecture where an application is split into small, independent services.
+
+Monolithic vs Microservices?
+Monolithic → single deployable unit; Microservices → independent services.
+
+Advantages of Microservices?
+Scalability, independent deployment, fault isolation.
+
+Disadvantages of Microservices?
+Complexity, network latency, monitoring difficulty
+
+Synchronous vs Asynchronous communication?
+Synchronous → waits for response; Asynchronous → event-based, non-blocking.
+*****
+
+How do Microservices communicate with each other?
+Microservices communicate with each other using **REST APIs or gRPC** for synchronous communication.
+They also use **message brokers like Kafka or RabbitMQ** for asynchronous, event-driven communication.
+Service discovery and load balancers help services find and communicate with each other dynamically.
+*****
+
+Common Microservices Design Patterns (with explanation)
+1️⃣ API Gateway Pattern
+Acts as a single entry point for all client requests.
+Handles authentication, routing, logging, and rate limiting.
+
+2️⃣ Circuit Breaker Pattern 
+The Circuit Breaker pattern is used to prevent a microservice from repeatedly calling another service that is failing.
+
+How Circuit Breaker works (States)
+1. Closed State
+Requests flow normally
+Failures are monitored
+2. Open State
+Failure threshold exceeded
+Requests are blocked immediately
+Fallback response is returned
+3. Half-Open State
+After some time, limited requests are allowed
+If success → switch to Closed
+If failure → back to Open
+
+3️⃣Saga Pattern  
+The Saga pattern is used to manage distributed transactions across multiple microservices.
+Saga pattern maintains data consistency by using compensating transactions instead of rollback.
+
+Why Saga Pattern is needed?
+No shared database
+No global rollback
+Each service commits independently
+Saga ensures data consistency using compensating transactions.
+
+How Saga works
+Each step:
+Executes a local transaction
+Publishes an event
+Next service continues the flow
+If a step fails:
+Previously completed steps are undone using compensating actions
+
+Real-life Example
+Order → Payment → Inventory → Shipping
+If Payment fails:
+Order is cancelled
+Inventory reservation is rolled back
+
+4️⃣ Service Discovery Pattern
+Automatically finds service instances at runtime.
+Avoids hardcoding service URLs.
+
+5️⃣ Database per Service Pattern
+Each microservice has its own database.
+Prevents tight coupling between services.
+
+6️⃣ Event-Driven Pattern
+Services communicate using events via message brokers.
+Supports asynchronous and loosely coupled systems.
 
 
 ******************************************************************************************************************************
 ******************************************************************************************************************************
-Microservices
+Angular                                                                             ******************************************
 ******************************************************************************************************************************
 ******************************************************************************************************************************
+
+
+
