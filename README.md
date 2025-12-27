@@ -149,6 +149,13 @@ What are the annotation we use in exception handling in spring boot?
 @RestControllerAdvice → Global exception handling for REST APIs
 @ResponseStatus → Defines HTTP status code for an exception
 @ResponseBody → Returns exception response as JSON/XML
+
+Q.Important HTTP Response Status Codes
+200 OK
+201 Created
+400 Bad Request
+401 Unauthorized
+404 Not Found
 *****
 
 What is Use of @Transactional annotation
@@ -290,6 +297,8 @@ Stateless: Uses token (JWT)
 Stateful: Hard to scale
 Stateless: Easy to scale
 ******
+
+
 
 
 ****************
