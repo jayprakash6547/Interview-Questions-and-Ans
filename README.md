@@ -231,7 +231,134 @@ Spring boot Annotaions---
 
 @Scheduled → Runs method on schedule
 
+****************
+Spring Security
+****************
+Q. What is Authentication?
+Authentication verifies who the user is (username and password validation).
+Q. What is Authorization?
+ Authorization checks what the user is allowed to access (roles and permissions).
 *****
+
+Q. What are the main parts of JWT (JSON Web Token)
+Header::---Contains information about the token type and the algorithm used to sign the token.
+Payload::---Contains the user data and claims like user id, role, and token expiry.
+Signature::---Used to verify that the token is authentic and has not been tampered with.
+*****
+
+What is Password Encoding?
+Password encoding converts passwords into a secure hashed format to protect user credentials.
+*****
+
+What is CSRF (Cross-Site Request Forgery)?
+CSRF is a security attack where a hacker forces a logged-in user’s browser to send a request to a trusted website without the user’s knowledge.
+Because the user is already authenticated, the server trusts the request and executes it.
+*****
+
+Q.Why CSRF is disabled in JWT?
+JWT is stateless and does not rely on cookies, so CSRF protection is not required.
+*****
+
+Q. What is OAuth2?
+OAuth2 is an authorization framework that allows secure third-party access without sharing credentials.
+*****
+
+Q. How JWT works?
+JWT works by generating a signed token after successful authentication.
+The client sends this token with every request.
+The server validates the token instead of using sessions.
+This makes authentication stateless and scalable.
+*****
+
+
+Q:In a banking application, JWT expiry time is 10 minutes. If the token expires, the user gets logged out. Is there any way to avoid this and keep the user logged in without re-login?
+Answer:
+Yes. We use Access Token and Refresh Token.
+The access token is short-lived (10 minutes). When it is about to expire, a new access token is generated using the refresh token. This extends the session automatically without logging the user out.
+*****
+
+Stateful vs Stateless Authentication – 3 Main Differences
+1️⃣ Session Storage
+Stateful: Server stores user session
+Stateless: Server does not store session
+
+2️⃣ Authentication Method
+Stateful: Uses session ID
+Stateless: Uses token (JWT)
+
+3️⃣ Scalability
+Stateful: Hard to scale
+Stateless: Easy to scale
+******
+
+
+****************
+Unit Testing
+****************
+What is Unit Testing in Spring Boot?
+Unit testing in Spring Boot is the process of testing individual components (like service or repository methods) independently, without starting the full application.
+*****
+
+Q.How it is done in Spring Boot?
+Uses JUnit for writing test cases
+Uses Mockito to mock dependencies
+Does not load the full Spring context
+*****
+
+Q.What are the benefits of Unit Testing?
+Early bug detection
+Better code quality
+Easier maintenance
+Faster development
+*****
+
+Q.What is JUnit?
+JUnit is a testing framework for Java used to write and run unit test cases.
+It helps developers check whether individual methods or classes work as expected.
+
+Main Annotations Used in JUnit
+1️⃣ @Test
+Marks a method as a test case.
+
+2️⃣ @BeforeEach
+Runs before each test method.
+Used for test setup.
+
+3️⃣ @AfterEach
+Runs after each test method.
+Used for cleanup.
+
+4️⃣ @BeforeAll
+Runs once before all test methods.
+Used for global setup.
+
+5️⃣ @AfterAll
+Runs once after all test methods.
+Used for global cleanup.
+
+6️⃣ @Disabled
+Disables a test method or class.
+*****
+
+Q.What is Mockito?
+Mockito is a mocking framework used in unit testing.
+It creates fake objects for dependencies so that individual components can be tested independently.
+*****
+
+Q.Mockito vs JUnit?
+JUnit
+Used to write and run test cases
+Defines test methods and assertions
+Controls test execution
+
+Mockito
+Used to mock dependencies
+Creates fake objects for testing
+Helps test classes in isolation
+*****
+
+
+
 
 
 
